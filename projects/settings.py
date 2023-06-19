@@ -32,6 +32,8 @@ ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split("
 
 # Application definition
 
+SITE_ID = 1
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,6 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -107,6 +113,24 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+def signup_username_only(*args, **kwargs):
+    from django import forms
+    from allauth.account.forms import SignupForm
+    form = SignupForm(*args, **kwargs)
+    form.fields["email"].widget = forms.HiddenInput()
+    return form
+
+ACCOUNT_FORMS = {
+    'signup': 'projects.settings.signup_username_only',
+}
+
+ACCOUNT_AUTHENTICATION_METHOD = "username"
 
 
 # Internationalization
