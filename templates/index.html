@@ -7,12 +7,44 @@
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
     <script src="https://unpkg.com/htmx.org@1.9.2"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
+    <style>
+        :root {
+            /* Default (light) theme */
+            --bg: #fff;
+            --accent-bg: #f5f5f5;
+            --text: #212121;
+            --text-light: #585858;
+            --border: #d8dae1;
+            --accent: #212121;
+            --code: #d81b60;
+            --preformatted: #444;
+            --marked: #ffdd33;
+            --disabled: #efefef;
+        }
+
+        /* Dark theme */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                color-scheme: dark;
+                --bg: #212121;
+                --accent-bg: #2b2b2b;
+                --text: #dcdcdc;
+                --text-light: #ababab;
+                --accent: #809fff;
+                --code: #f06292;
+                --preformatted: #ccc;
+                --disabled: #111;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    {% block header %}{% endblock %}
     <main>
         {% block main %}{% endblock %}
     </main>
+    {% block footer %}{% endblock %}
 </body>
 
 </html>
