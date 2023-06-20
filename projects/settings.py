@@ -28,6 +28,7 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", 'django-insecure-7@idp#yf6!fvk$aky7)
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+SECURE_HSTS_SECONDS = 3600
 
 ADMIN_URL = os.getenv("ADMIN_URL", "admin/")
 
