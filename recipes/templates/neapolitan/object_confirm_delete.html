@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Confirm Delete?</h1>
+    <p>{{ object }}</p>
+    <form method="POST" action="{{ delete_view_url }}">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Delete</button>
+        <a class="button" href="{% url object_verbose_name|add:'-list' %}">Cancel</a>
+    </form>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% load neapolitan %}
+
+{% block content %}
+    <a href="{% url object_verbose_name|add:'-list' %}">← View all {{ object_verbose_name_plural }}</a>
+    <h1>{{ object }}</h1>
+    {% object_detail object view.fields %}
+{% endblock %}

@@ -1,0 +1,9 @@
+{% if ingredients %}
+    <code>
+        <pre>{% for i in ingredients %}{% if i.aisle__name %}({{ i.aisle__name }}) {% endif %}{% if i.total_quantity %}{{ i.total_quantity }} {% endif %}{% if i.unit__name %}{{ i.unit__name }} {% endif %}{{ i.name }}<br>{% endfor %}</pre>
+    </code>
+{% elif request.GET %}
+    <p>There are no ingredients from the selected recipes.</p>
+{% else %}
+    <p>Select one or more recipes to generate shopping list.</p>
+{% endif %}

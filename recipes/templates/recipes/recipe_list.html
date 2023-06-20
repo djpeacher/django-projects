@@ -1,0 +1,11 @@
+{% extends 'neapolitan/object_list.html' %}
+
+{% block extra_actions %}
+    <br><a href="" hx-get="{% url 'shopping-list' %}" hx-include="[name='id']" hx-target="#shopping-list">Generate shopping list</a>
+    <br><a href="{% url 'unit-list' %}">Manage units</a>
+    <br><a href="{% url 'aisle-list' %}">Manage aisles</a>
+{% endblock %}
+    
+{% block extra_top_content %}
+    <div id="shopping-list"></div>
+{% endblock %}

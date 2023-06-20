@@ -1,0 +1,13 @@
+{% extends 'neapolitan/object_list.html' %}
+
+{% block title %}
+    <h1>{{ recipe.name }}</h1>
+{% endblock %}
+
+{% block extra_actions %}
+    <br><a href="{% url 'recipe-list' %}">← View all recipes</a>
+{% endblock %}
+
+{% block extra_top_content %}
+    <p class="notice">{{ recipe.note }}</p>
+{% endblock %}

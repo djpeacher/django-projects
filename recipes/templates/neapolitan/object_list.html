@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load neapolitan %}
+
+{% block index_header %}
+    <header>
+        {% block title %}
+            <h1>{{ object_verbose_name_plural|capfirst }}</h1>
+        {% endblock %}
+        <div>
+            {% block actions %}
+                <a href="{{ create_view_url }}">Add a new {{ object_verbose_name }}</a>
+                {% block extra_actions %}{% endblock %}
+            {% endblock %}
+        </div>
+    </header>
+{% endblock %}
+
+{% block content %}
+    {% block extra_top_content %}{% endblock %}
+    {% if object_list %}
+        {% object_list object_list view.fields %}
+    {% else %}
+        <p>There are no {{ object_verbose_name_plural }}. Create one now?</p>
+    {% endif %}
+    {% block extra_bottom_content %}{% endblock %}
+{% endblock %}
