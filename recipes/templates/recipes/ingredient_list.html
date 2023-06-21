@@ -9,5 +9,7 @@
 {% endblock %}
 
 {% block extra_top_content %}
-    <p class="notice">{{ recipe.note }}</p>
+    {% if recipe.note %}
+        <p class="notice">{{ recipe.note }}</p>
+    {% endif %}
 {% endblock %}
