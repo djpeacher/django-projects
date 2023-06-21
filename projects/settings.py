@@ -28,7 +28,9 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", 'django-insecure-7@idp#yf6!fvk$aky7)
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
-SECURE_HSTS_SECONDS = 3600
+
+# https://docs.djangoproject.com/en/4.2/ref/middleware/#http-strict-transport-security
+SECURE_HSTS_SECONDS = 31536000
 
 ADMIN_URL = os.getenv("ADMIN_URL", "admin/")
 
@@ -159,3 +161,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Email settings
+
+EMAIL_HOST = os.getenv("EMAIL_HOST")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_PORT = os.getenv("EMAIL_PORT")
+EMAIL_USE_SSL = os.getenv("EMAIL_USE_SSL") == "True"
+EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS") == "True"
+DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL")
