@@ -1,4 +1,4 @@
-export DEBUG := "True"
+set dotenv-load
 
 start:
     python manage.py runserver
