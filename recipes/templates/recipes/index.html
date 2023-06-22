@@ -3,11 +3,25 @@
 {% block index_header %}
     <header>
         <h1>Recipes</h1>
-        <p>TK TK TK</p>
+        <p>Manage recipes and generate shopping list!</p>
+        <a href="{% url 'recipe-list' %}" class="button">Get Started →</a>
     </header>
 {% endblock %}
-    
+
 {% block index_main %}
-    <p>TK TK TK</p>
-    <a href="{% url 'recipe-list' %}" class="button">Get Started →</a>
+    <h2>Features</h2>
+    <ul>
+        <li>Manage recipes and their ingredients.</li>
+        <li>Manage ingredient units and aisles.</li>
+        <li>
+            Generate ingredient shopping list!
+            <ul>
+                <li>Grouped by unique <code>name-unit-aisle</code> across selected recipes.</li>
+                <li>
+                    Ex. <code>2 cups rice</code> and <code>3 cups rice</code> will be combined into
+                    <code>5 cups rice</code>.
+                </li>
+            </ul>
+        </li>
+    </ul>
 {% endblock %}
