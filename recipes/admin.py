@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.db.models import Sum
 from django.http import HttpResponse
-from .views import Aisle, Unit, Recipe, Ingredient
+from .models import Aisle, Unit, Recipe, Ingredient
 
 
 @admin.register(Unit)
