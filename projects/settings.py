@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'recipes',
     'neapolitan',
+    'user_solo',
 ]
 
 MIDDLEWARE = [
