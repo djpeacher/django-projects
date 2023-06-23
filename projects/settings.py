@@ -138,6 +138,7 @@ ACCOUNT_FORMS = {
 }
 
 ACCOUNT_AUTHENTICATION_METHOD = "username"
+ACCOUNT_SIGNUP_REDIRECT_URL = "/"
 
 
 # Internationalization
