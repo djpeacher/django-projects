@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'recipes',
     'neapolitan',
     'user_solo',
+    'search',
 ]
 
 MIDDLEWARE = [
@@ -139,6 +140,7 @@ ACCOUNT_FORMS = {
 
 ACCOUNT_AUTHENTICATION_METHOD = "username"
 ACCOUNT_SIGNUP_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "/"
 
 
 # Internationalization

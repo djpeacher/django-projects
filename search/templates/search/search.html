@@ -1,0 +1,15 @@
+{% extends 'index.html'%}
+
+{% block index_main %}
+    <h2>Just Search</h2>
+    <form>
+        <input type="text" name="q" value="{{ query }}" style="width: 100%;" {% if not query %}autofocus{% endif %}>
+    </form>
+
+    {% for item in result %}
+        <a href="{{ item.link }}">
+            <h3 style="margin-bottom: 0;">{{ item.title }}</h3>
+        </a>
+        <p style="margin-top: 0;">{{ item.link }}</p>
+    {% endfor %}
+{% endblock %}
